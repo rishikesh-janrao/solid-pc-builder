@@ -1,30 +1,21 @@
-import { A } from "solid-start";
-import Counter from "~/components/Counter";
+import { useContext } from "solid-js";
+import { TranslationContext } from "~/contexts/ConfigContext";
+
 export default function Home() {
+  const { lets_build_a_pc_for_you, get_started } =
+    useContext(TranslationContext);
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
-        Hello world!
-      </h1>
-      <Counter />
-      <p class="mt-8">
-        Visit{" "}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-        >
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <span>Home</span>
-        {" - "}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>{" "}
-      </p>
+    <main class="mx-auto text-gray-300">
+      <div className="hero min-h-100 bg-banner">
+        <div className="hero-content">
+          <div className="max-w-full flex flex-col space-y-8 pt-10">
+            <h1 className="w-2/3 text-7xl font-bold">
+              {lets_build_a_pc_for_you}
+            </h1>
+            <button className="w-40 btn btn-primary hover:bg-accent hover:text-primary">{get_started}</button>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

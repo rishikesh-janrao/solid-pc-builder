@@ -1,30 +1,30 @@
+import { useContext } from "solid-js";
 import { A } from "solid-start";
+import { TranslationContext } from "~/contexts/ConfigContext";
 export default function NotFound() {
+  const { page_not_found } = useContext(TranslationContext);
+
+  const _404_classes = {
+    0: "flex justify-end align-middle portrait:p-8 landscape:p-16 landscape:pt-60 bg-secondary text-9xl w-2/5",
+    1: "flex justify-center align-middle portrait:p-8 landscape:p-16 landscape:pt-60 text-9xl w-1/5 border-t-2 border-t-secondary border-b-2 border-b-secondary border-secondary bg-gray-100 text-slate-600",
+    2: "flex justify-start align-middle portrait:p-8 landscape:p-16 landscape:pt-60 bg-secondary text-9xl w-2/5",
+  };
+
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
-        Not Found
-      </h1>
-      <p class="mt-8">
-        Visit{" "}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-        >
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <A href="/" class="text-sky-600 hover:underline">
-          Home
-        </A>
-        {" - "}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>
-      </p>
+    <main class="flex flex-col text-center portrait:items-center portrait:justify-center portrait:h-screen">
+      <div class="flex justify-center w-full text-gray-100">
+        <h1 class={_404_classes[0]}>4</h1>
+        <h1 class={_404_classes[1]}>0</h1>
+        <h1 class={_404_classes[2]}>4</h1>
+      </div>
+      <div class="p-10">
+        <h1 class="text-4xl">{page_not_found}</h1>
+        <p class="my-4">
+          <A href="/" class="text-sky-600 hover:underline">
+            Home
+          </A>
+        </p>
+      </div>
     </main>
   );
 }
