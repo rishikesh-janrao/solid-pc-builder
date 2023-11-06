@@ -5,9 +5,9 @@ export default function NotFound() {
   const { page_not_found } = useContext(TranslationContext);
 
   const _404_classes = {
-    0: "flex justify-end align-middle portrait:p-8 landscape:p-16 landscape:pt-60 bg-secondary text-9xl w-2/5",
-    1: "flex justify-center align-middle portrait:p-8 landscape:p-16 landscape:pt-60 text-9xl w-1/5 border-t-2 border-t-secondary border-b-2 border-b-secondary border-secondary bg-gray-100 text-slate-600",
-    2: "flex justify-start align-middle portrait:p-8 landscape:p-16 landscape:pt-60 bg-secondary text-9xl w-2/5",
+    0: "flex justify-end align-middle portrait:p-8 landscape:py-16 landscape:pt-60 text-secondary text-9xl w-2/5",
+    1: "flex justify-center align-middle portrait:p-8 landscape:py-16 landscape:pt-60 text-9xl w-1/6 text-slate-100",
+    2: "flex justify-start align-middle portrait:p-8 landscape:py-16 landscape:pt-60 text-9xl w-2/5 text-secondary",
   };
 
   return (
